@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bakery Store</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="icon" href="images/logo.ico">
+    </head>
+    <body>
+        <header>
+            <div class="header-full">
+                <div class="header-inner">
+                    <span class="logo-name">
+                        <a href="home.html"><img src="images/shopping-cart.png" class="shopcart-img" alt=""></a>
+                        <a class="menu-text" href="home.html">Bakery Store</a>
+                    </span>
+                    <span class="menu">
+                        <a class="menu-text page" href="home.html">Home</a>
+                        <a class="menu-text page" href="products.html">Products</a>
+                        <a class="menu-text page" href="account-login.html">Account</a>
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <div class="header-placeholder" aria-hidden="true"></div>
+
+        <div class="main" id="signup">
+            <div class="signup-full">
+                <div class="signup-inner">
+                    <div class="title-section">
+                        <a href="account-login.html"><img class="back-btn" src="images/back-button-icon.png" alt=""></a>
+                        <h1 class="verification-text">Sign Up</h1>
+                    </div>
+                    <div class="signup-inner-wrapper">
+                        <div class="signup-input-wrapper">
+                            <div class="signup-input-container">
+                                <label for="firstname" class="input-field-name">First name</label>
+                                <input id="firstname" class="input-field" required>
+                            </div>
+                            <div class="signup-input-container">
+                                <label for="lastname" class="input-field-name">Last name</label>
+                                <input id="lastname" class="input-field" required>
+                            </div>
+                            <div class="signup-input-container">
+                                <label for="email" class="input-field-name">Email</label>
+                                <input type="email" id="email" class="input-field" size="30" required>
+                            </div>
+                        </div>
+
+                        <div class="signup-input-wrapper">
+                            <div class="signup-input-container">
+                                <label for="username" class="input-field-name">Username</label>
+                                <input id="username" class="input-field" required>
+                            </div>
+                            <div class="signup-input-container">
+                                <label for="password" class="input-field-name">Password</label>
+                                <input type="password" id="password" class="input-field" name="password" minlength="8" required>
+                            </div>
+                            <button class="signup-btn">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-full">
+                <div class="footer-inner">
+                    <span class="footer-images">
+                        <img src="images/facebook-icon.png" class="footer-img" alt="facebook-icon">
+                        <img src="images/instagram-icon.png" class="footer-img" alt="facebook-icon">
+                        <img src="images/telegram-icon.png" class="footer-img" id="telegram-img" alt="facebook-icon">
+                    </span>
+                    <p class="footer-text">You can reach us here</p>
+                    <p class="footer-text">Copyright @2022 | All rights reserved</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
