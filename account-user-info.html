@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bakery Store</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="icon" href="images/logo.ico">
+    </head>
+    <body>
+        <header>
+            <div class="header-full">
+                <div class="header-inner">
+                    <span class="logo-name">
+                        <a href="home.html"><img src="images/shopping-cart.png" class="shopcart-img" alt=""></a>
+                        <a class="menu-text" href="home.html">Bakery Store</a>
+                    </span>
+                    <span class="menu">
+                        <a class="menu-text page" href="home.html">Home</a>
+                        <a class="menu-text page" href="products.html">Products</a>
+                        <a class="menu-text page" href="account-login.html">Account</a>
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <div class="header-placeholder" aria-hidden="true"></div>
+
+        <div class="main" id="user-info">
+            <div class="user-info-full login-full">
+                <div class="user-info-inner login-inner">
+                    <div class="title-section">
+                        <a href="account-user.html"><img class="back-btn" src="images/back-button-icon.png" alt=""></a>
+                        <h1 class="verification-text">User Info</h1>
+                    </div>
+                    <div class="user-info-input-wrapper login-input-wrapper">
+                        <div class="login-input-container">
+                            <label for="username" class="input-field-name">Username</label>
+                            <input id="username" class="input-field" size="30" value="user1" required>
+                        </div>
+                        <div class="login-input-container">
+                            <label for="first_name" class="input-field-name">First name</label>
+                            <input id="first_name" class="input-field" size="30" value="Steve" required>
+                        </div>
+                        <div class="login-input-container">
+                            <label for="last_name" class="input-field-name">Last name</label>
+                            <input id="last_name" class="input-field" size="30" value="Jobs" required>
+                        </div>
+                        <div class="login-input-container">
+                            <label for="email" class="input-field-name">Email</label>
+                            <input type="email" id="email" class="input-field" size="30" value="stevejobs@gmail.com" required>
+                        </div>
+                        <div class="login-input-container">
+                            <label for="password" class="input-field-name">Password</label>
+                            <input type="password" id="password" class="input-field" name="password" minlength="8" value="12345678" required>
+                        </div>
+                    </div>
+                    <div class="admin-btn login-btn-wrapper">
+                        <button class="login-btn">UPDATE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-full">
+                <div class="footer-inner">
+                    <span class="footer-images">
+                        <img src="images/facebook-icon.png" class="footer-img" alt="facebook-icon">
+                        <img src="images/instagram-icon.png" class="footer-img" alt="facebook-icon">
+                        <img src="images/telegram-icon.png" class="footer-img" id="telegram-img" alt="facebook-icon">
+                    </span>
+                    <p class="footer-text">You can reach us here</p>
+                    <p class="footer-text">Copyright @2022 | All rights reserved</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

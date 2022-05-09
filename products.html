@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bakery Store</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="icon" href="images/logo.ico">
+    </head>
+    <body>
+        <header>
+            <div class="header-full">
+                <div class="header-inner">
+                    <span class="logo-name">
+                        <a href="home.html"><img src="images/shopping-cart.png" class="shopcart-img" alt="shopcart-img"></a>
+                        <a class="menu-text" href="home.html">Bakery Store</a>
+                    </span>
+                    <span class="menu">
+                        <a class="menu-text page" href="home.html">Home</a>
+                        <a class="menu-text page" href="products.html">Products</a>
+                        <a class="menu-text page" href="account-login.html">Account</a>
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <div class="header-placeholder" aria-hidden="true"></div>
+
+        <div class="main" id="products">
+            <h1 class="page-name">Products</h1>
+            <div class="products-table">
+                <div class="products-row">
+                    <div class="products-pair">
+                        <div class="product">
+                            <h3>Wholemeal bread</h3>
+                            <h3 class="product-description">Price: <span>350</span> UAH</h3>
+                            <h3 class="product-description">Status: available</h3>
+                            <label class="product-description" for="1">
+                                Quantity:
+                                <input class="product-description product-quantity" id="1" type="number" name="productQuantity" step="1" min="1" max="10" value="1" onkeydown="return false">
+                            </label>
+                            <button class="more-btn">Add to cart</button>
+                        </div>
+
+                        <div class="product">
+                            <h3>Rye bread</h3>
+                            <h3 class="product-description">Price: 350 UAH</h3>
+                            <h3 class="product-description">Status: available</h3>
+                            <label class="product-description" for="2">
+                                Quantity:
+                                <input class="product-description product-quantity" id="2" type="number" name="productQuantity" step="1" min="1" max="10" value="1" onkeydown="return false">
+                            </label>
+                            <button class="more-btn">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="products-pair">
+                        <div class="product">
+                            <h3>Baguette bread</h3>
+                            <h3 class="product-description">Price: 350 UAH</h3>
+                            <h3 class="product-description">Status: available</h3>
+                            <label class="product-description" for="3">
+                                Quantity:
+                                <input class="product-description product-quantity" id="3" type="number" name="productQuantity" step="1" min="1" max="10" value="1" onkeydown="return false">
+                            </label>
+                            <button class="more-btn">Add to cart</button>
+                        </div>
+
+                        <div class="product">
+                            <h3>Corn bread</h3>
+                            <h3 class="product-description">Price: 350 UAH</h3>
+                            <h3 class="product-description">Status: available</h3>
+                            <label class="product-description" for="4">
+                                Quantity:
+                                <input class="product-description product-quantity" id="4" type="number" name="productQuantity" step="1" min="1" max="10" value="1" onkeydown="return false">
+                            </label>
+                            <button class="more-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-row">
+                    <div class="products-pair">
+                        <div class="product">
+                            <h3>White bread</h3>
+                            <h3 class="product-description">Price: 350 UAH</h3>
+                            <h3 class="product-description">Status: available</h3>
+                            <label class="product-description" for="5">
+                                Quantity:
+                                <input class="product-description product-quantity" id="5" type="number" name="productQuantity" step="1" min="1" max="10" value="1" onkeydown="return false">
+                            </label>
+                            <button class="more-btn">Add to cart</button>
+                        </div>
+
+                        <div class="product">
+                            <h3>Ciabatta bread</h3>
+                            <h3 class="product-description">Price: 350 UAH</h3>
+                            <h3 class="product-description">Status: available</h3>
+                            <label class="product-description" for="6">
+                                Quantity:
+                                <input class="product-description product-quantity" id="6" type="number" name="productQuantity" step="1" min="1" max="10" value="1" onkeydown="return false">
+                            </label>
+                            <button class="more-btn">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="products-pair">
+                        <div class="product">
+                            <h3>Lavash bread</h3>
+                            <h3 class="product-description">Price: 350 UAH</h3>
+                            <h3 class="product-description">Status: available</h3>
+                            <label class="product-description" for="7">
+                                Quantity:
+                                <input class="product-description product-quantity" id="7" type="number" name="productQuantity" step="1" min="1" max="10" value="1" onkeydown="return false">
+                            </label>
+                            <button class="more-btn">Add to cart</button>
+                        </div>
+
+                        <div class="product">
+                            <h3>Garlic bread</h3>
+                            <h3 class="product-description">Price: 350 UAH</h3>
+                            <h3 class="product-description">Status: available</h3>
+                            <label class="product-description" for="8">
+                                Quantity:
+                                <input class="product-description product-quantity" id="8" type="number" name="productQuantity" step="1" min="1" max="100" value="1" onkeydown="return false">
+                            </label>
+                            <button class="more-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-full">
+                <div class="footer-inner">
+                    <span class="footer-images">
+                        <img src="images/facebook-icon.png" class="footer-img" alt="facebook-icon">
+                        <img src="images/instagram-icon.png" class="footer-img" alt="facebook-icon">
+                        <img src="images/telegram-icon.png" class="footer-img" id="telegram-img" alt="facebook-icon">
+                    </span>
+                    <p class="footer-text">You can reach us here</p>
+                    <p class="footer-text">Copyright @2022 | All rights reserved</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

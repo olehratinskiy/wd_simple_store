@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bakery Store</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="icon" href="images/logo.ico">
+    </head>
+    <body>
+        <header>
+            <div class="header-full">
+                <div class="header-inner">
+                    <span class="logo-name">
+                        <a href="home.html"><img src="images/shopping-cart.png" class="shopcart-img" alt=""></a>
+                        <a class="menu-text" href="home.html">Bakery Store</a>
+                    </span>
+                    <span class="menu">
+                        <a class="menu-text page" href="home.html">Home</a>
+                        <a class="menu-text page" href="products.html">Products</a>
+                        <a class="menu-text page" href="account-login.html">Account</a>
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <div class="header-placeholder" aria-hidden="true"></div>
+
+        <div class="main" id="delete">
+            <div class="user-cart-full login-full">
+                <div class="user-cart-inner login-inner">
+                    <div class="title-section">
+                        <a href="account-user.html"><img class="back-btn" src="images/back-button-icon.png" alt=""></a>
+                        <h1 class="verification-text">Shopping Cart</h1>
+                    </div>
+
+                    <table id="table">
+                        <tr>
+                            <td>Order ID</td>
+                            <td>Name</td>
+                            <td>Quantity</td>
+                            <td>Price</td>
+                        </tr>
+
+                        <tr>
+                            <td class="row-data">1</td>
+                            <td class="row-data">Corn bread</td>
+                            <td class="row-data">2</td>
+                            <td class="row-data">350 UAH</td>
+                        </tr>
+                        <tr>
+                            <td class="row-data">2</td>
+                            <td class="row-data">Rye bread</td>
+                            <td class="row-data">10</td>
+                            <td class="row-data">20 UAH</td>
+                        </tr>
+                    </table>
+                    <input type="button" class="more-btn" value="DELETE ORDER">
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-full">
+                <div class="footer-inner">
+                    <span class="footer-images">
+                        <img src="images/facebook-icon.png" class="footer-img" alt="facebook-icon">
+                        <img src="images/instagram-icon.png" class="footer-img" alt="facebook-icon">
+                        <img src="images/telegram-icon.png" class="footer-img" id="telegram-img" alt="facebook-icon">
+                    </span>
+                    <p class="footer-text">You can reach us here</p>
+                    <p class="footer-text">Copyright @2022 | All rights reserved</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
