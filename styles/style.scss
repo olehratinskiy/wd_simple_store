@@ -383,43 +383,50 @@ h3 {
 }
 @media screen and (max-width: 480px) {
   td {
-    font-size: 20px;
+      font-size: 20px;
   }
 
   .verification-text {
-    font-size: 40px !important;
+      font-size: 40px !important;
   }
 
   .greeting-section {
-    height: 430px;
-    width: 250px;
+      height: 430px;
+      width: 250px;
   }
 
   #home-btn {
-    height: 50px;
+      height: 50px;
   }
 
   .login-full, .signup-full {
-    max-width: 255px;
+      max-width: 300px;
   }
 
   .login-inner, .input-field {
-    max-width: 189px;
+      max-width: 237px;
   }
 
   .signup-inner {
-    max-width: 189px;
-    padding: 0;
+      max-width: 237px;
+      padding: 0;
   }
 
   .signup-input-wrapper {
-    margin: 0 auto;
-    width: 189px;
+      margin: 0 auto;
+      width: 237px;
   }
 
   .back-btn {
-    max-width: 28px;
-    max-height: 28px;
+      max-width: 30px;
+      max-height: 30px;
+  }
+
+  .admin-full-delete {
+      min-width: 325px;
+  }
+  .admin-inner-delete {
+      min-width: 267px;
   }
 }
 .back-btn {
