@@ -1,14 +1,31 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import logo from './images/shopping-cart.png';
 import menu from './images/closed-menu-icon.png';
 
 function Navbar() {
+    const navigate = useNavigate();
     const [isLoggedIn, setLogin] = useState();
     const [username, setUsername] = useState();
     const [headerHeight, setHeaderHeight] = useState('65px');
     const [menuShowStyle, setMenuShowStyle] = useState('');
     const [hidden, setHidden] = useState(true);
+
+    const getProductsList = () => {
+        fetch('http://127.0.0.1:5000/items', {
+            method: 'POST'
+        }).then(response => {
+            response.json().then(result => {
+                navigate('/products', {
+                    state: {
+                        products: result
+                    }
+                });
+            })
+        }).catch(error => {
+            return error;
+        });
+    }
 
     useEffect(() => {
         if (localStorage.getItem('username') !== null) {
@@ -48,13 +65,13 @@ function Navbar() {
                 <div className='header-full' style={{height: headerHeight}}>
                     <div className='header-inner'>
                         <span className='logo-name'>
-                            <p><img src={logo} className='shopcart-img' alt=''/></p>
-                            <p className='menu-text'>Bakery Store</p>
+                            <Link to={'/home'}><img src={logo} className='shopcart-img' alt=''/></Link>
+                            <Link to={'/home'} className='menu-text'>Bakery Store</Link>
                         </span>
                         <img src={menu} className='menu-hidden' alt='' onClick={showMenu}/>
                         <span className='menu' style={{display: menuShowStyle}}>
-                            <p className='menu-text page' id='home-link'>Home</p>
-                            <p className='menu-text page' id='products-link'>Products</p>
+                            <Link to={'/home'} className='menu-text page' id='home-link'>Home</Link>
+                            <p onClick={getProductsList} className='menu-text page' id='products-link'>Products</p>
                             <Link to={getAccountPath()} className='menu-text page' id='account-link'>Account</Link>
                         </span>
                     </div>
