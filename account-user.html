@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Bakery Store</title>
         <link rel="stylesheet" href="styles/style.css">
-        <link rel="icon" href="images/logo.ico">
+        <link rel="icon" href="./images/logo.ico">
     </head>
     <body>
         <header>
@@ -15,10 +15,11 @@
                         <a href="home.html"><img src="images/shopping-cart.png" class="shopcart-img" alt=""></a>
                         <a class="menu-text" href="home.html">Bakery Store</a>
                     </span>
+                    <img src="images/closed-menu-icon.png" class="menu-hidden">
                     <span class="menu">
-                        <a class="menu-text page" href="home.html">Home</a>
-                        <a class="menu-text page" href="products.html">Products</a>
-                        <a class="menu-text page" href="account-login.html">Account</a>
+                        <a class="menu-text page" id="home-link" href="home.html">Home</a>
+                        <a class="menu-text page" id="products-link" href="products.html">Products</a>
+                        <a class="menu-text page" id="account-link">Account</a>
                     </span>
                 </div>
             </div>
@@ -26,20 +27,30 @@
 
         <div class="header-placeholder" aria-hidden="true"></div>
 
+        <div class="msg" id="error">
+            <p class="msg-text">Error 400. Wrong input data provided.</p>
+            <button class="msg-btn" type="button">Close</button>
+        </div>
+
+        <div class="msg" id="success">
+            <p class="msg-text">Successful operation</p>
+            <button class="msg-btn" type="button">Close</button>
+        </div>
+
         <div class="main">
             <div class="account-full login-full">
                 <div class="account-inner login-inner">
                     <h1 class="verification-text">User Panel</h1>
-                    <form action="account-user-info.html">
-                        <button class="account-btn more-btn">User info</button>
+                    <form>
+                        <button type="button" class="account-btn more-btn" id="user-info-btn">User info</button>
                     </form>
                     <form action="account-user-cart.html">
-                        <button class="account-btn more-btn">Shopping cart</button>
+                        <button type="button" class="account-btn more-btn">Shopping cart</button>
                     </form>
                     <form action="account-login.html">
-                        <button class="account-btn more-btn">Log out</button>
+                        <button type="button" class="account-btn more-btn" id="logout">Log out</button>
                     </form>
-                    <button class="account-btn more-btn">Delete account</button>
+                    <button type="button" class="account-btn more-btn">Delete account</button>
                 </div>
             </div>
         </div>
@@ -48,14 +59,16 @@
             <div class="footer-full">
                 <div class="footer-inner">
                     <span class="footer-images">
-                        <img src="images/facebook-icon.png" class="footer-img" alt="facebook-icon">
-                        <img src="images/instagram-icon.png" class="footer-img" alt="facebook-icon">
-                        <img src="images/telegram-icon.png" class="footer-img" id="telegram-img" alt="facebook-icon">
+                        <img src="./images/facebook-icon.png" class="footer-img" alt="facebook-icon">
+                        <img src="./images/instagram-icon.png" class="footer-img" alt="facebook-icon">
+                        <img src="./images/telegram-icon.png" class="footer-img" id="telegram-img" alt="facebook-icon">
                     </span>
                     <p class="footer-text">You can reach us here</p>
                     <p class="footer-text">Copyright @2022 | All rights reserved</p>
                 </div>
             </div>
         </footer>
+        <script type="application/javascript" src="scripts/index.js"></script>
+        <script type="application/javascript" src="scripts/account-user.js"></script>
     </body>
 </html>

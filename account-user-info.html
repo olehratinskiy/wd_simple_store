@@ -15,16 +15,27 @@
                         <a href="home.html"><img src="images/shopping-cart.png" class="shopcart-img" alt=""></a>
                         <a class="menu-text" href="home.html">Bakery Store</a>
                     </span>
+                    <img src="images/closed-menu-icon.png" class="menu-hidden">
                     <span class="menu">
-                        <a class="menu-text page" href="home.html">Home</a>
-                        <a class="menu-text page" href="products.html">Products</a>
-                        <a class="menu-text page" href="account-login.html">Account</a>
+                        <a class="menu-text page" id="home-link" href="home.html">Home</a>
+                        <a class="menu-text page" id="products-link" href="products.html">Products</a>
+                        <a class="menu-text page" id="account-link">Account</a>
                     </span>
                 </div>
             </div>
         </header>
 
         <div class="header-placeholder" aria-hidden="true"></div>
+
+        <div class="msg" id="error">
+            <p class="msg-text">Error 400. Wrong input data provided.</p>
+            <button class="msg-btn" type="button">Close</button>
+        </div>
+
+        <div class="msg" id="success">
+            <p class="msg-text">Successful operation</p>
+            <button class="msg-btn" type="button" id="close">Close</button>
+        </div>
 
         <div class="main" id="user-info">
             <div class="user-info-full login-full">
@@ -36,23 +47,23 @@
                     <div class="user-info-input-wrapper login-input-wrapper">
                         <div class="login-input-container">
                             <label for="username" class="input-field-name">Username</label>
-                            <input id="username" class="input-field" size="30" value="user1" required>
+                            <input id="username" class="input-field" size="30" required>
                         </div>
                         <div class="login-input-container">
                             <label for="first_name" class="input-field-name">First name</label>
-                            <input id="first_name" class="input-field" size="30" value="Steve" required>
+                            <input id="first_name" class="input-field" size="30" required>
                         </div>
                         <div class="login-input-container">
                             <label for="last_name" class="input-field-name">Last name</label>
-                            <input id="last_name" class="input-field" size="30" value="Jobs" required>
+                            <input id="last_name" class="input-field" size="30" required>
                         </div>
                         <div class="login-input-container">
                             <label for="email" class="input-field-name">Email</label>
-                            <input type="email" id="email" class="input-field" size="30" value="stevejobs@gmail.com" required>
+                            <input type="email" id="email" class="input-field" size="30" required>
                         </div>
                         <div class="login-input-container">
                             <label for="password" class="input-field-name">Password</label>
-                            <input type="password" id="password" class="input-field" name="password" minlength="8" value="12345678" required>
+                            <input type="password" id="password" class="input-field" name="password" minlength="8" required>
                         </div>
                     </div>
                     <div class="admin-btn login-btn-wrapper">
@@ -75,5 +86,7 @@
                 </div>
             </div>
         </footer>
+        <script type="application/javascript" src="scripts/index.js"></script>
+        <script type="application/javascript" src="scripts/account-user-info.js"></script>
     </body>
 </html>
