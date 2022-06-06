@@ -27,7 +27,7 @@ hiddenMenuBtn.addEventListener('click', function() {
     {
         header.style.height = '65px';
         headerPlaceholder.style.height = '65px';
-        menu.style.display = '';
+        menu.style.display = 'none';
         hidden = true;
     }
 });
