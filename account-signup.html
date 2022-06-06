@@ -15,16 +15,27 @@
                         <a href="home.html"><img src="images/shopping-cart.png" class="shopcart-img" alt=""></a>
                         <a class="menu-text" href="home.html">Bakery Store</a>
                     </span>
+                    <img src="images/closed-menu-icon.png" class="menu-hidden">
                     <span class="menu">
-                        <a class="menu-text page" href="home.html">Home</a>
-                        <a class="menu-text page" href="products.html">Products</a>
-                        <a class="menu-text page" href="account-login.html">Account</a>
+                        <a class="menu-text page" id="home-link" href="home.html">Home</a>
+                        <a class="menu-text page" id="products-link" href="products.html">Products</a>
+                        <a class="menu-text page" id="account-link">Account</a>
                     </span>
                 </div>
             </div>
         </header>
 
         <div class="header-placeholder" aria-hidden="true"></div>
+
+        <div class="msg" id="error">
+            <p class="msg-text">Error 400. Wrong input data provided.</p>
+            <button class="msg-btn" type="button">Close</button>
+        </div>
+
+        <div class="msg" id="success">
+            <p class="msg-text">Successful operation</p>
+            <button class="msg-btn" type="button">Close</button>
+        </div>
 
         <div class="main" id="signup">
             <div class="signup-full">
@@ -33,7 +44,7 @@
                         <a href="account-login.html"><img class="back-btn" src="images/back-button-icon.png" alt=""></a>
                         <h1 class="verification-text">Sign Up</h1>
                     </div>
-                    <div class="signup-inner-wrapper">
+                    <form name="signup-form" class="signup-inner-wrapper" method="post">
                         <div class="signup-input-wrapper">
                             <div class="signup-input-container">
                                 <label for="firstname" class="input-field-name">First name</label>
@@ -58,9 +69,9 @@
                                 <label for="password" class="input-field-name">Password</label>
                                 <input type="password" id="password" class="input-field" name="password" minlength="8" required>
                             </div>
-                            <button class="signup-btn">Sign Up</button>
+                            <button type="button" class="signup-btn">Sign Up</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -78,5 +89,7 @@
                 </div>
             </div>
         </footer>
+        <script type="text/javascript" src="scripts/registration.js"></script>
+        <script type="application/javascript" src="scripts/index.js"></script>
     </body>
 </html>
