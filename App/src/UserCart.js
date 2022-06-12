@@ -86,7 +86,7 @@ function UserCart (props) {
                                 }) : null}
                             </tbody>
                         </table>
-                        <input type='button' className='more-btn' value='DELETE ORDER' onClick={deleteOrder}/>
+                        <input type='button' className='more-btn' value='DELETE PRODUCT' onClick={deleteOrder}/>
                     </div>
                 </div>
             </div>

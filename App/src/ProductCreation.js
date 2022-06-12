@@ -70,7 +70,7 @@ function ProductCreation () {
                     <div className='add-item-inner login-inner'>
                         <div className='title-section'>
                             <Link to={'/admin'}><img className='back-btn' src={backBtn} alt=''/></Link>
-                            <h1 className='verification-text'>Add Item</h1>
+                            <h1 className='verification-text'>Add Product</h1>
                         </div>
                         <div className='add-item-input-wrapper login-input-wrapper'>
                             <div className='login-input-container'>

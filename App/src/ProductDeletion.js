@@ -62,7 +62,7 @@ function ProductDeletion (props) {
                     <div className='admin-inner-delete login-inner'>
                         <div className='title-section'>
                             <Link to={'/admin'}><img className='back-btn' src={backBtn} alt=''/></Link>
-                            <h1 className='verification-text'>Delete Item</h1>
+                            <h1 className='verification-text'>Delete Product</h1>
                         </div>
 
                         <table id='table'>
