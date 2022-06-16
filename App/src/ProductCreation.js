@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import backBtn from './images/back-button-icon.png';
 import Message from './Message';
+import axios from "axios";
 
 
 function ProductCreation () {
@@ -15,7 +16,8 @@ function ProductCreation () {
     const [name, setName] = useState('');
     const [storageQuantity, setStorageQuantity] = useState('');
     const [price, setPrice] = useState('');
-
+    let img;
+    // const [index, setIndex] = useState(-1);
 
     const handleClose = () => {
         setCode(-1);
@@ -29,44 +31,70 @@ function ProductCreation () {
         } else return null;
     }
 
-    const createProduct = () => {
+    const addImage = () => {
+        img = document.getElementById('select-product').files[0]
+        let formData = new FormData();
+        if (img === undefined) {
+            setState({'message': 'No image uploaded'})
+            setCode(400)
+            showMessage()
+        } else {
+            formData.append('pic', img);
+            axios.post(
+                `http://127.0.0.1:5000/upload`,
+                formData,
+                {
+                    headers: {
+                        "Content-type": "multipart/form-data",
+                    }})
+                .then(res => {
+                    createProduct(parseInt(res.data['index']))
+                })
+                .catch(err => {
+                    console.log(err);
+                }
+            )
+        }
+    }
+
+    const createProduct = (index) => {
         setToken(localStorage.getItem('token'));
         fetch(`http://127.0.0.1:5000/item`, {
-            method: 'POST',
-            headers: {
-                'Authorization': 'Bearer ' + token,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                storage_quantity: storageQuantity,
-                price: price,
-                status: 'available'
-            }),
-            }).then(response => {
-                if (response.status === 200) {
-                    setName('');
-                    setStorageQuantity('');
-                    setPrice('');
-                    return response.json();
-                }
-                else {
-                    setCode(response.status);
-                    response.json().then( message => setState(message) )
-
-                    setMessageShow(true);
-                }
-            }).catch(error => {
-                return error;
-            });
-        }
+        method: 'POST',
+        headers: {
+            'Authorization': 'Bearer ' + token,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: name,
+            storage_quantity: storageQuantity,
+            price: price,
+            status: 'available',
+            img_id: index
+        }),
+        }).then(response => {
+            if (response.status === 200) {
+                setName('');
+                setStorageQuantity('');
+                setPrice('');
+                return response.json();
+            }
+            else {
+                setCode(response.status);
+                response.json().then( message => setState(message) )
+                setMessageShow(true);
+            }
+        }).catch(error => {
+            return error;
+        });
+    }
 
     return (
         <div>
             {Navbar()}
             {showMessage()}
             <div className='main'>
-                <div className='login-full'>
+                <div className='add-item-full login-full'>
                     <div className='add-item-inner login-inner'>
                         <div className='title-section'>
                             <Link to={'/admin'}><img className='back-btn' src={backBtn} alt=''/></Link>
@@ -85,9 +113,15 @@ function ProductCreation () {
                                 <label htmlFor='price' className='input-field-name'>Price</label>
                                 <input disabled={messageShow} id='price' value={price} className='input-field' size='30' onChange={(e) => {setPrice(e.target.value)}} required/>
                             </div>
+                            <div className='login-input-container'>
+                                <label htmlFor='price' className='input-field-name'>Image</label>
+                                <input type="file" name="pic" id='select-product' onChange={(e) => {
+                                    img = e.target.files[0];
+                                }}/>
+                            </div>
                         </div>
                         <div className='admin-btn login-btn-wrapper'>
-                            <button disabled={messageShow} className='login-btn' onClick={createProduct}>ADD</button>
+                            <button disabled={messageShow} className='login-btn' onClick={addImage}>ADD</button>
                         </div>
                     </div>
                 </div>

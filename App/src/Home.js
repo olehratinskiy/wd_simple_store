@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/style.css'
 import Navbar from './Navbar';
 import Footer from './Footer';
-import homeProducts from './images/home-products.png';
+import homeProducts from './images/home-products.jpg';
 import {useNavigate} from 'react-router-dom';
 
 function Home() {

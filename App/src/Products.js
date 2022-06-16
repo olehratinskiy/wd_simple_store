@@ -27,6 +27,12 @@ function Products(props) {
         } else return null;
     }
 
+    function hexToBytes(hex) {
+        for (var bytes = [], c = 0; c < hex.length; c += 2)
+            bytes.push(parseInt(hex.substr(c, 2), 16));
+        return bytes;
+    }
+
     const getUser = (itemId, itemQuantity, price) => {
         setUsername(localStorage.getItem('username'));
         setToken(localStorage.getItem('token'));
@@ -97,18 +103,20 @@ function Products(props) {
     const getProductsStructure = (result, num) => {
         return (
             <div>
-                {result[num] ? [result[num]].map( ( {item_id, name, storage_quantity, price, status} ) => {
+                {result[num] ? [result[num]].map( ( {item_id, name, storage_quantity, price, status, img_id, img_mimetype} ) => {
+                    let blob = new Blob([new Uint8Array(hexToBytes(img_id))], { type: img_mimetype });
                     quantities[item_id] === undefined ? quantities[item_id] = '1' : quantities[item_id] = quantities.item_id
                     return (
                     <div key={item_id} className='product'>
                         <h3>{name}</h3>
+                        <img className="product-img" src={URL.createObjectURL(blob)} alt=''/>
                         <h3 className='product-description'>Price: <span>{price}</span> UAH</h3>
                         <h3 className='product-description'>Status: {status}</h3>
                         <label className='product-description' htmlFor='1'>
                             Quantity ({storage_quantity}):
                             <input className='product-description product-quantity' id='1' defaultValue='1'  name='productQuantity' onChange={(e) => {quantities[item_id] = e.target.value}}/>
                         </label>
-                        <button className='more-btn' onClick={() => getUser(item_id, quantities[item_id], price)}>Add to cart</button>
+                        <button className='more-btn' id='product-btn' onClick={() => getUser(item_id, quantities[item_id], price)}>Add to cart</button>
                     </div>
                 )
                 }) : <div className='product'><h3 className='product-comming-soon'>Product<br/>coming<br/>soon</h3></div>}
