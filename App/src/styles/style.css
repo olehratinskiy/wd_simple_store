@@ -145,7 +145,7 @@ h3 {
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     margin-left: auto;
     margin-right: auto;
     top: 50%;
@@ -247,11 +247,11 @@ h3 {
 }
 
 #products {
-    min-height: 720px;
+    min-height: 920px;
 }
 
 .products-table {
-    min-height: 550px;
+    min-height: 757px;
     width: 1050px;
     display: flex;
     margin: 0 auto auto;
@@ -271,11 +271,16 @@ h3 {
     display: flex;
 }
 
+#select-product {
+    color: #E4E4C7;
+    opacity: 1;
+}
+
 .product {
     padding-top: 18px;
     border-style: solid;
     border-color: #7E7E65;
-    height: 250px;
+    height: 358px;
     width: 230px;
     display: flex;
     margin: 0;
@@ -285,7 +290,7 @@ h3 {
 
 .product-description {
     text-align: left;
-    margin-left: 20px;
+    margin-left: 15px;
     font-size: 27px;
     color: #2C4D50;
 }
@@ -304,7 +309,15 @@ h3 {
 
 .product-comming-soon {
     letter-spacing: 3px;
-    margin: 60px;
+    margin-top: 113px;
+}
+
+.product-img {
+    padding: 3px 15px 9px 15px;
+}
+
+#product-btn {
+    margin-top: 6px;
 }
 
 #home-btn {
@@ -734,12 +747,17 @@ h3 {
     font-size: 32px;
 }
 
+.add-item-full {
+    height: 540px;
+}
+
 .add-item-inner {
-    height: 420px;
+    height: 470px;
 }
 
 .add-item-input-wrapper {
-    height: 270px;
+    height: 370px;
+    margin: 0;
 }
 
 .admin-btn {

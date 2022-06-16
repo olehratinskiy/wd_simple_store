@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import backBtn from './images/back-button-icon.png';
 import Message from './Message';
+import axios from "axios";
 
 
 function ProductEdition () {
@@ -15,7 +16,7 @@ function ProductEdition () {
     const [name, setName] = useState('');
     const [storageQuantity, setStorageQuantity] = useState('');
     const [price, setPrice] = useState('');
-
+    let img;
 
     const handleClose = () => {
         setCode(-1);
@@ -29,7 +30,30 @@ function ProductEdition () {
         } else return null;
     }
 
-    const editProduct = () => {
+    const addImage = () => {
+        let formData = new FormData();
+        if (img === undefined) {
+            editProduct('')
+        } else {
+            formData.append('pic', img);
+            axios.post(
+                `http://127.0.0.1:5000/upload`,
+                formData,
+                {
+                    headers: {
+                        "Content-type": "multipart/form-data",
+                    }})
+                .then(res => {
+                    editProduct(parseInt(res.data['index']))
+                })
+                .catch(err => {
+                    console.log(err);
+                }
+            )
+        }
+    }
+
+    const editProduct = (index) => {
         setToken(localStorage.getItem('token'));
         fetch(`http://127.0.0.1:5000/item/${name !== '' ? name : 'test'}`, {
             method: 'PUT',
@@ -41,7 +65,8 @@ function ProductEdition () {
                 name: name,
                 storage_quantity: storageQuantity,
                 price: price,
-                status: 'available'
+                status: 'available',
+                img_id: index
             }),
             }).then(response => {
                 if (response.status === 200) {
@@ -66,7 +91,7 @@ function ProductEdition () {
             {Navbar()}
             {showMessage()}
             <div className='main'>
-                <div className='login-full'>
+                <div className='add-item-full login-full'>
                     <div className='add-item-inner login-inner'>
                         <div className='title-section'>
                             <Link to={'/admin'}><img className='back-btn' src={backBtn} alt=''/></Link>
@@ -85,9 +110,15 @@ function ProductEdition () {
                                 <label htmlFor='price' className='input-field-name'>Price</label>
                                 <input disabled={messageShow} value={price} id='price' className='input-field' size='30' onChange={(e) => {setPrice(e.target.value)}} required/>
                             </div>
+                            <div className='login-input-container'>
+                                <label htmlFor='price' className='input-field-name'>Image</label>
+                                <input type="file" name="pic" id='select-product' onChange={(e) => {
+                                    img = e.target.files[0];
+                                }}/>
+                            </div>
                         </div>
                         <div className='admin-btn login-btn-wrapper'>
-                            <button className='login-btn' onClick={editProduct}>UPDATE</button>
+                            <button className='login-btn' onClick={addImage}>UPDATE</button>
                         </div>
                     </div>
                 </div>
