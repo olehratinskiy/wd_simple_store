@@ -1,2 +1,2 @@
 # lab 1
-### Project link: https://olehratinskiy.github.io/wd_simple_store/home.html
+### Project link: https://olehratinskiy.github.io/test_wd/account-login.html
